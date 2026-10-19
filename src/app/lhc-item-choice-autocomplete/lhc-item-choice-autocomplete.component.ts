@@ -43,7 +43,7 @@ export class LhcItemChoiceAutocompleteComponent implements OnChanges {
    * Add or remove subgroups for the multi-select item based on the current value of the item.
    */
   addOrRemoveSubGroups(): void {
-    if (!this.item.items) {
+    if (!this.item._multipleAnswers || !this.item.items?.length) {
       return;
     }
     const validLinkIds = this.item.value?.map((v) => {
